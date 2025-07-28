@@ -11,8 +11,7 @@ Proyecto araña:
     - Motores: Tower Pro MG 996R. Dimensiones: 40.6x19.8x42.9 mm
 
     - Placas:
-        * Arduino uno.
-        * Esp32 (Comunicación).
+        * Esp32.
         * HW-613 (Reg. Tensión).
         * PCB: 3mm grosor de cable, diseñado en easyEDA.
 
