@@ -2,7 +2,7 @@
 
 Proyecto araña:
 
-Hardware:
++ Hardware:
 
    _ Motores: Tower Pro MG 996R. Dimensiones: 40.6x19.8x42.9 mm
 
