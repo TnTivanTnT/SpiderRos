@@ -1,6 +1,6 @@
 # SpiderRos
 
-Proyecto araña
+Proyecto araña:
 
 Hardware:
    Motores: Tower Pro MG 996R. Dimensiones: 40.6x19.8x42.9 mm
