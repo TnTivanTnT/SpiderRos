@@ -11,3 +11,8 @@ Proyecto araña:
         * Esp32 (Comunicación).
         * HW-613 (Reg. Tensión).
         * PCB: 3mm grosor de cable, diseñado en easyEDA.
+
++ Software:
+    - Arduino IDE.
+    - ROS 2 Humble.
+    - Gazebo.
