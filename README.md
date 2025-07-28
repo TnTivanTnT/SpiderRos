@@ -1,7 +1,7 @@
 # SpiderRos
 
 Al abrir el treminal para trabajr con ROS2:
-
+source /opt/ros/humble/setup.bash
 source ~/Escritorio/Spider/WS/install/setup.bash
 
 Proyecto araña:
