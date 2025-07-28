@@ -1,5 +1,9 @@
 # SpiderRos
 
+Al abrir el treminal para trabajr con ROS2:
+
+source ~/Escritorio/Spider/WS/install/setup.bash
+
 Proyecto araña:
 
 + Hardware:
