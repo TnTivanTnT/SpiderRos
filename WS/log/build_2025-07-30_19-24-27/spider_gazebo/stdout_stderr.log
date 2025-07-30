@@ -1,0 +1,29 @@
+running develop
+Removing /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider-gazebo.egg-link (link to .)
+running egg_info
+writing ../../build/spider_gazebo/spider_gazebo.egg-info/PKG-INFO
+writing dependency_links to ../../build/spider_gazebo/spider_gazebo.egg-info/dependency_links.txt
+writing entry points to ../../build/spider_gazebo/spider_gazebo.egg-info/entry_points.txt
+writing requirements to ../../build/spider_gazebo/spider_gazebo.egg-info/requires.txt
+writing top-level names to ../../build/spider_gazebo/spider_gazebo.egg-info/top_level.txt
+reading manifest file '../../build/spider_gazebo/spider_gazebo.egg-info/SOURCES.txt'
+writing manifest file '../../build/spider_gazebo/spider_gazebo.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+creating /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo
+copying /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build/lib/spider_gazebo/__init__.py -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo
+copying /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build/lib/spider_gazebo/joint_publisher.py -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo
+byte-compiling /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo/joint_publisher.py to joint_publisher.cpython-310.pyc
+running install_data
+copying resource/spider_gazebo -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/ament_index/resource_index/packages
+copying package.xml -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/spider_gazebo
+copying launch/spider_lanzador.launch.py -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/spider_gazebo/launch
+copying urdf/spider_model.urdf.xacro -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/spider_gazebo/urdf
+running install_egg_info
+Copying ../../build/spider_gazebo/spider_gazebo.egg-info to /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo-0.0.0-py3.10.egg-info
+running install_scripts
+Installing joint_publisher script to /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/spider_gazebo
+writing list of installed files to '/home/ivan/Escritorio/Spider/WS/build/spider_gazebo/install.log'

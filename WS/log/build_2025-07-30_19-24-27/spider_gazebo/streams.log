@@ -1,0 +1,33 @@
+[0.759s] Invoking command in '/home/ivan/Escritorio/Spider/WS/build/spider_gazebo': PYTHONPATH=/home/ivan/Escritorio/Spider/WS/build/spider_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build
+[1.065s] running develop
+[1.259s] Removing /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider-gazebo.egg-link (link to .)
+[1.300s] Invoked command in '/home/ivan/Escritorio/Spider/WS/build/spider_gazebo' returned '0': PYTHONPATH=/home/ivan/Escritorio/Spider/WS/build/spider_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build
+[1.302s] Invoking command in '/home/ivan/Escritorio/Spider/WS/src/spider_gazebo': PYTHONPATH=/home/ivan/Escritorio/Spider/WS/build/spider_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/spider_gazebo build --build-base /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build install --record /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/install.log --single-version-externally-managed install_data --force
+[1.595s] running egg_info
+[1.596s] writing ../../build/spider_gazebo/spider_gazebo.egg-info/PKG-INFO
+[1.597s] writing dependency_links to ../../build/spider_gazebo/spider_gazebo.egg-info/dependency_links.txt
+[1.597s] writing entry points to ../../build/spider_gazebo/spider_gazebo.egg-info/entry_points.txt
+[1.597s] writing requirements to ../../build/spider_gazebo/spider_gazebo.egg-info/requires.txt
+[1.597s] writing top-level names to ../../build/spider_gazebo/spider_gazebo.egg-info/top_level.txt
+[1.600s] reading manifest file '../../build/spider_gazebo/spider_gazebo.egg-info/SOURCES.txt'
+[1.601s] writing manifest file '../../build/spider_gazebo/spider_gazebo.egg-info/SOURCES.txt'
+[1.601s] running build
+[1.601s] running build_py
+[1.602s] running install
+[1.602s] running install_lib
+[1.603s] creating /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo
+[1.604s] copying /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build/lib/spider_gazebo/__init__.py -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo
+[1.604s] copying /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build/lib/spider_gazebo/joint_publisher.py -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo
+[1.604s] byte-compiling /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo/__init__.py to __init__.cpython-310.pyc
+[1.604s] byte-compiling /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo/joint_publisher.py to joint_publisher.cpython-310.pyc
+[1.605s] running install_data
+[1.605s] copying resource/spider_gazebo -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/ament_index/resource_index/packages
+[1.605s] copying package.xml -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/spider_gazebo
+[1.605s] copying launch/spider_lanzador.launch.py -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/spider_gazebo/launch
+[1.606s] copying urdf/spider_model.urdf.xacro -> /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/share/spider_gazebo/urdf
+[1.606s] running install_egg_info
+[1.608s] Copying ../../build/spider_gazebo/spider_gazebo.egg-info to /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages/spider_gazebo-0.0.0-py3.10.egg-info
+[1.609s] running install_scripts
+[1.636s] Installing joint_publisher script to /home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/spider_gazebo
+[1.637s] writing list of installed files to '/home/ivan/Escritorio/Spider/WS/build/spider_gazebo/install.log'
+[1.676s] Invoked command in '/home/ivan/Escritorio/Spider/WS/src/spider_gazebo' returned '0': PYTHONPATH=/home/ivan/Escritorio/Spider/WS/build/spider_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ivan/Escritorio/Spider/WS/install/spider_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/spider_gazebo build --build-base /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/build install --record /home/ivan/Escritorio/Spider/WS/build/spider_gazebo/install.log --single-version-externally-managed install_data --force

@@ -1,0 +1,3 @@
+[console_scripts]
+joint_publisher = spider_gazebo.joint_publisher:main
+
