@@ -2,7 +2,7 @@
 
 Al abrir el treminal para trabajr con ROS2:
 source /opt/ros/humble/setup.bash
-source ~/Escritorio/Spider/WS/install/setup.bash
+source ~/{ruta hasta tu ws}/install/setup.bash
 
 Proyecto araña:
 
