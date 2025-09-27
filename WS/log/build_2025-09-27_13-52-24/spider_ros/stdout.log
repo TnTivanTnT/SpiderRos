@@ -1,0 +1,28 @@
+running develop
+running egg_info
+creating spider_ros.egg-info
+writing spider_ros.egg-info/PKG-INFO
+writing dependency_links to spider_ros.egg-info/dependency_links.txt
+writing entry points to spider_ros.egg-info/entry_points.txt
+writing requirements to spider_ros.egg-info/requires.txt
+writing top-level names to spider_ros.egg-info/top_level.txt
+writing manifest file 'spider_ros.egg-info/SOURCES.txt'
+reading manifest file 'spider_ros.egg-info/SOURCES.txt'
+writing manifest file 'spider_ros.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/lib/python3.10/site-packages/spider-ros.egg-link (link to .)
+Installing spider_controller script to /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/lib/spider_ros
+
+Installed /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros
+running symlink_data
+creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index
+creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index/resource_index
+creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index/resource_index/packages
+symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/resource/spider_ros -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index/resource_index/packages
+symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/package.xml -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros
+creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/launch
+symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/launch/simulacion_launch.py -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/launch
+creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/urdf
+symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/urdf/spider_model.urdf.xacro -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/urdf
+creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/config
+symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/config/spider_control.yaml -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/config

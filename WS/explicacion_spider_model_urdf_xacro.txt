@@ -1,0 +1,44 @@
+Explicación del archivo spider_model.urdf.xacro
+===============================================
+
+Este archivo define el modelo del robot para simulación en Gazebo y uso en ROS2. Está escrito en formato Xacro (XML Macro), que permite parametrizar y reutilizar partes del URDF.
+
+Estructura principal:
+---------------------
+- **Propiedades Xacro:**
+  - `M_PI`, `cube_size`, `wheel_radius`, `wheel_thickness`: Constantes para facilitar cambios rápidos en el tamaño del cubo y la rueda.
+
+- **Materiales:**
+  - Define materiales "blue" y "black" para visualización.
+
+- **Links:**
+  - `base_link`: Un cubo que representa el cuerpo principal del robot.
+  - `wheel_link`: Un cilindro que representa la rueda.
+
+- **Joint:**
+  - `joint_rueda_prueba`: Une la rueda al cubo. Es de tipo "continuous" (puede girar indefinidamente). El eje de rotación es `z` del link de la rueda, pero la rueda está girada 90° en X (`rpy="${M_PI/2} 0 0"`), por lo que el eje de rotación real es el eje `y` del mundo. Si la rueda aparece "acostada" o girada, este es el motivo.
+
+- **Plugins y ros2_control:**
+  - Se incluye el plugin de `gazebo_ros2_control` para permitir el control de la rueda desde ROS2.
+  - El bloque `<ros2_control>` define la interfaz de hardware y los comandos/estados disponibles para el joint de la rueda.
+
+Nota sobre la orientación de la rueda:
+-------------------------------------
+La rueda está girada 90° en el eje X respecto al cubo. Esto se hace con `rpy="${M_PI/2} 0 0"` en la etiqueta `<origin>`. Si quieres que la rueda esté "de pie" (eje de rotación alineado con el eje Z del mundo), elimina o ajusta este valor.
+
+Por ejemplo, para que la rueda esté alineada con el eje Z del mundo:
+
+    <origin xyz="${cube_size/2} 0 0" rpy="0 0 0"/>
+
+Esto hará que el eje de rotación sea el Z del mundo y la rueda esté "parada".
+
+Recomendación:
+--------------
+- Si la rueda debe girar como una rueda de vehículo (en el plano X-Y), deja el rpy como está.
+- Si quieres que gire como una peonza (alrededor de Z), pon rpy="0 0 0".
+
+Puedes modificar el archivo y reconstruir el workspace para ver el efecto.
+
+---
+
+Este archivo es seguro y no afecta el funcionamiento del paquete. Puedes eliminarlo o modificarlo libremente para documentar tu modelo.

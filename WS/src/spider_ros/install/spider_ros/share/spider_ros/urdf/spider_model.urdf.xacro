@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot name="spider_model" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="cube_size" value="0.5" />
+  <xacro:property name="wheel_radius" value="0.2" />
+  <xacro:property name="wheel_thickness" value="0.1" />
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="${cube_size} ${cube_size} ${cube_size}"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${cube_size} ${cube_size} ${cube_size}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+  </link>
+
+  <link name="wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000675" ixy="0.0" ixz="0.0" iyy="0.000675" iyz="0.0" izz="0.00125"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_rueda_prueba" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_link"/>
+  <origin xyz="${cube_size/2} 0 0" rpy="0 0 0"/> 
+    <axis xyz="0 0 1"/> </joint>
+
+  <gazebo>
+    <plugin filename="libros2_gazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find spider_ros)/config/spider_control.yaml</parameters>
+  <robot_param>robot_description</robot_param>
+    </plugin>
+  </gazebo>
+  
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    <joint name="joint_rueda_prueba">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+</robot>

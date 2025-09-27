@@ -1,0 +1,19 @@
+[0.298s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros': PYTHONPATH=/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/build/spider_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/install/spider_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/spider_ros build --build-base /home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/build/spider_ros/build install --record /home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/build/spider_ros/install.log --single-version-externally-managed install_data
+[0.414s] running egg_info
+[0.415s] writing build/spider_ros/spider_ros.egg-info/PKG-INFO
+[0.415s] writing dependency_links to build/spider_ros/spider_ros.egg-info/dependency_links.txt
+[0.415s] writing entry points to build/spider_ros/spider_ros.egg-info/entry_points.txt
+[0.415s] writing requirements to build/spider_ros/spider_ros.egg-info/requires.txt
+[0.415s] writing top-level names to build/spider_ros/spider_ros.egg-info/top_level.txt
+[0.415s] reading manifest file 'build/spider_ros/spider_ros.egg-info/SOURCES.txt'
+[0.416s] writing manifest file 'build/spider_ros/spider_ros.egg-info/SOURCES.txt'
+[0.416s] running build
+[0.416s] running install
+[0.416s] running install_data
+[0.416s] running install_egg_info
+[0.417s] removing '/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/install/spider_ros/lib/python3.10/site-packages/spider_ros-0.0.0-py3.10.egg-info' (and everything under it)
+[0.417s] Copying build/spider_ros/spider_ros.egg-info to /home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/install/spider_ros/lib/python3.10/site-packages/spider_ros-0.0.0-py3.10.egg-info
+[0.417s] running install_scripts
+[0.430s] Installing spider_controller script to /home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/install/spider_ros/lib/spider_ros
+[0.430s] writing list of installed files to '/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/build/spider_ros/install.log'
+[0.442s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros' returned '0': PYTHONPATH=/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/build/spider_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/install/spider_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/spider_ros build --build-base /home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/build/spider_ros/build install --record /home/maki/Desktop/GitHub/SpiderRos/WS/src/spider_ros/build/spider_ros/install.log --single-version-externally-managed install_data
