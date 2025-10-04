@@ -4,3 +4,6 @@ source;share/spider_ros/hook/pythonpath.sh
 source;share/spider_ros/hook/ament_prefix_path.ps1
 source;share/spider_ros/hook/ament_prefix_path.dsv
 source;share/spider_ros/hook/ament_prefix_path.sh
+source;../../build/spider_ros/share/spider_ros/hook/pythonpath_develop.ps1
+source;../../build/spider_ros/share/spider_ros/hook/pythonpath_develop.dsv
+source;../../build/spider_ros/share/spider_ros/hook/pythonpath_develop.sh

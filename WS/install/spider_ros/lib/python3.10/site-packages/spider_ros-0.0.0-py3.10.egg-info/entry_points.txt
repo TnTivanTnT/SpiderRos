@@ -1,3 +1,0 @@
-[console_scripts]
-spider_controller = spider_ros.spider_controller:main
-

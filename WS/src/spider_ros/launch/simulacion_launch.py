@@ -53,7 +53,7 @@ def generate_launch_description():
              'spider_position_controller', '--controller-manager', 'controller_manager'],
         output='screen'
     )
-    
+
     return LaunchDescription([
         gazebo,
         robot_state_publisher_node,
