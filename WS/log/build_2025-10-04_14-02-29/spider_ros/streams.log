@@ -1,0 +1,30 @@
+[0.306s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros': PYTHONPATH=/home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/build --no-deps symlink_data
+[0.428s] running develop
+[0.499s] running egg_info
+[0.499s] creating spider_ros.egg-info
+[0.499s] writing spider_ros.egg-info/PKG-INFO
+[0.499s] writing dependency_links to spider_ros.egg-info/dependency_links.txt
+[0.499s] writing entry points to spider_ros.egg-info/entry_points.txt
+[0.500s] writing requirements to spider_ros.egg-info/requires.txt
+[0.500s] writing top-level names to spider_ros.egg-info/top_level.txt
+[0.500s] writing manifest file 'spider_ros.egg-info/SOURCES.txt'
+[0.500s] reading manifest file 'spider_ros.egg-info/SOURCES.txt'
+[0.500s] writing manifest file 'spider_ros.egg-info/SOURCES.txt'
+[0.501s] running build_ext
+[0.501s] Creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/lib/python3.10/site-packages/spider-ros.egg-link (link to .)
+[0.502s] Installing spider_controller script to /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/lib/spider_ros
+[0.502s] 
+[0.502s] Installed /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros
+[0.502s] running symlink_data
+[0.502s] creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index
+[0.502s] creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index/resource_index
+[0.502s] creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index/resource_index/packages
+[0.502s] symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/resource/spider_ros -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/ament_index/resource_index/packages
+[0.502s] symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/package.xml -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros
+[0.502s] creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/launch
+[0.502s] symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/launch/simulacion_launch.py -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/launch
+[0.502s] creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/urdf
+[0.502s] symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/urdf/spider_model.urdf.xacro -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/urdf
+[0.502s] creating /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/config
+[0.502s] symbolically linking /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/config/spider_control.yaml -> /home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/share/spider_ros/config
+[0.517s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros' returned '0': PYTHONPATH=/home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maki/Desktop/GitHub/SpiderRos/WS/install/spider_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/build --no-deps symlink_data
