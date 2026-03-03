@@ -1,1 +1,0 @@
-/home/maki/Desktop/GitHub/SpiderRos/WS/build/spider_ros/launch/simulacion_launch.py

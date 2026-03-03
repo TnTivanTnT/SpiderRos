@@ -1,0 +1,4 @@
+Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maki/Desktop/GitHub/SpiderRos/build/spider_description
+Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maki/Desktop/GitHub/SpiderRos/build/spider_description

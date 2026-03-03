@@ -1,0 +1,6 @@
+CMake Error at cmake_install.cmake:46 (file):
+  file INSTALL cannot find
+  "/home/maki/Desktop/GitHub/SpiderRos/spider_description/launch": No such
+  file or directory.
+
+

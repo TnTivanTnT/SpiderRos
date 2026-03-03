@@ -1,0 +1,49 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # Position controllers declared for future use - NOT activated in Hito 1
+    front_right_leg_controller:
+      type: position_controllers/JointGroupPositionController
+
+    front_left_leg_controller:
+      type: position_controllers/JointGroupPositionController
+
+    back_left_leg_controller:
+      type: position_controllers/JointGroupPositionController
+
+    back_right_leg_controller:
+      type: position_controllers/JointGroupPositionController
+
+# --- Controller parameters ---
+
+front_right_leg_controller:
+  ros__parameters:
+    joints:
+      - front_right_coxa_joint
+      - front_right_femur_joint
+      - front_right_tibia_joint
+
+front_left_leg_controller:
+  ros__parameters:
+    joints:
+      - front_left_coxa_joint
+      - front_left_femur_joint
+      - front_left_tibia_joint
+
+back_left_leg_controller:
+  ros__parameters:
+    joints:
+      - back_left_coxa_joint
+      - back_left_femur_joint
+      - back_left_tibia_joint
+
+back_right_leg_controller:
+  ros__parameters:
+    joints:
+      - back_right_coxa_joint
+      - back_right_femur_joint
+      - back_right_tibia_joint

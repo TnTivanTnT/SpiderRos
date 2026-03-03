@@ -1,0 +1,36 @@
+[0.009s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maki/Desktop/GitHub/SpiderRos/spider_description -DCMAKE_INSTALL_PREFIX=/home/maki/Desktop/GitHub/SpiderRos/install/spider_description
+[0.129s] -- The C compiler identification is GNU 11.4.0
+[0.222s] -- The CXX compiler identification is GNU 11.4.0
+[0.234s] -- Detecting C compiler ABI info
+[0.320s] -- Detecting C compiler ABI info - done
+[0.325s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.325s] -- Detecting C compile features
+[0.326s] -- Detecting C compile features - done
+[0.329s] -- Detecting CXX compiler ABI info
+[0.408s] -- Detecting CXX compiler ABI info - done
+[0.415s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.415s] -- Detecting CXX compile features
+[0.415s] -- Detecting CXX compile features - done
+[0.418s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.551s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.642s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.716s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.718s] -- Added test 'lint_cmake' to check CMake code style
+[0.719s] -- Added test 'xmllint' to check XML markup files
+[0.721s] -- Configuring done
+[0.723s] -- Generating done
+[0.724s] -- Build files have been written to: /home/maki/Desktop/GitHub/SpiderRos/build/spider_description
+[0.729s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maki/Desktop/GitHub/SpiderRos/spider_description -DCMAKE_INSTALL_PREFIX=/home/maki/Desktop/GitHub/SpiderRos/install/spider_description
+[0.731s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+[0.771s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+[0.780s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maki/Desktop/GitHub/SpiderRos/build/spider_description
+[0.789s] -- Install configuration: ""
+[0.789s] -- Installing: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/urdf
+[0.789s] -- Installing: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/urdf/spider.urdf.xacro
+[0.789s] CMake Error at cmake_install.cmake:46 (file):
+[0.789s]   file INSTALL cannot find
+[0.789s]   "/home/maki/Desktop/GitHub/SpiderRos/spider_description/launch": No such
+[0.789s]   file or directory.
+[0.789s] 
+[0.789s] 
+[0.790s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maki/Desktop/GitHub/SpiderRos/build/spider_description
