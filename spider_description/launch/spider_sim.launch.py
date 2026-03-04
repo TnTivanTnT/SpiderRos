@@ -23,6 +23,7 @@ from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
     ExecuteProcess,
+    SetEnvironmentVariable,
     TimerAction,
 )
 from launch.conditions import IfCondition, UnlessCondition
@@ -34,6 +35,7 @@ from launch.substitutions import (
     PythonExpression,
 )
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -65,6 +67,16 @@ def generate_launch_description():
     spawn_z       = LaunchConfiguration('spawn_z')
 
     # ---------------------------------------------------------------
+    # Make the ign_ros2_control .so visible to Ignition Gazebo.
+    # Ignition searches IGN_GAZEBO_SYSTEM_PLUGIN_PATH for system plugins;
+    # the .so lives in the ROS2 lib dir which is not on that path by default.
+    # ---------------------------------------------------------------
+    ign_plugin_path = SetEnvironmentVariable(
+        name='IGN_GAZEBO_SYSTEM_PLUGIN_PATH',
+        value='/opt/ros/humble/lib'
+    )
+
+    # ---------------------------------------------------------------
     # Paths
     # ---------------------------------------------------------------
     urdf_path   = os.path.join(pkg_share, 'urdf', 'spider.urdf.xacro')
@@ -89,9 +101,10 @@ def generate_launch_description():
     # ---------------------------------------------------------------
     # 2. robot_state_publisher
     # ---------------------------------------------------------------
-    robot_description = Command([
-        FindExecutable(name='xacro'), ' ', urdf_path
-    ])
+    robot_description = ParameterValue(
+        Command([FindExecutable(name='xacro'), ' ', urdf_path]),
+        value_type=str
+    )
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -164,6 +177,7 @@ def generate_launch_description():
         use_sim_time_arg,
         gz_headless_arg,
         spawn_z_arg,
+        ign_plugin_path,
         gazebo_gui,
         gazebo_headless,
         robot_state_publisher,
