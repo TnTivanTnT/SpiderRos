@@ -2,8 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="spider">
 
   <!-- ============================================================
-       SPIDER QUADRUPED ROBOT - URDF/XACRO  (Hito 1 rev.2)
-       Body: flat base cylinder + dome sphere (no leg intersection)
+       SPIDER QUADRUPED ROBOT - URDF/XACRO  (Hito 1 rev.3)
+       Body: flat base cylinder + dome mesh (true hemisphere, no clipping)
        4 legs in X-pattern at 45°/135°/-135°/-45°
        3 DOF per leg: coxa(Z) → femur(Y) → tibia(Y)
   ============================================================ -->
@@ -12,15 +12,15 @@
        CONSTANTS
   ============================================================ -->
   <!-- Body geometry -->
-  <xacro:property name="base_r"        value="0.13"/>   <!-- base disc radius -->
-  <xacro:property name="base_h"        value="0.025"/>  <!-- base disc height -->
-  <xacro:property name="dome_r"        value="0.10"/>   <!-- dome sphere radius -->
-  <!-- dome center is at z = base_h/2 + dome_r*0.45 so it sits on top of base -->
-  <xacro:property name="dome_z"        value="0.06"/>
+  <xacro:property name="base_r"        value="0.12"/>   <!-- base disc radius (wider than dome) -->
+  <xacro:property name="base_h"        value="0.01"/>   <!-- base disc height -->
+  <xacro:property name="dome_r"        value="0.08"/>   <!-- dome mesh radius (hemisphere) -->
+  <!-- dome mesh base sits exactly on top face of disc (z = +base_h/2) -->
+  <xacro:property name="dome_z"        value="${base_h / 2.0}"/>
 
   <!-- Hip attachment: on top surface of base disc, at radial distance hip_r -->
-  <xacro:property name="hip_r"         value="0.10"/>   <!-- radial offset of coxa joint from centre -->
-  <xacro:property name="hip_z_offset"  value="0.0125"/> <!-- = base_h/2, top of base disc -->
+  <xacro:property name="hip_r"         value="${base_r - 0.015}"/>  <!-- radial offset of coxa joint from centre -->
+  <xacro:property name="hip_z_offset"  value="${base_h / 2.0}"/>   <!-- = base_h/2, top of base disc -->
 
   <!-- Leg geometry -->
   <xacro:property name="coxa_r"  value="0.018"/>
@@ -256,7 +256,7 @@
   <joint name="base_footprint_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0.22" rpy="0 0 0"/>
+    <origin xyz="0 0 0.30" rpy="0 0 0"/>
   </joint>
 
   <!-- ============================================================
@@ -273,10 +273,12 @@
       <material name="chassis_dark"><color rgba="0.18 0.18 0.20 1.0"/></material>
     </visual>
 
-    <!-- Visual 2: dome sphere on top -->
+    <!-- Visual 2: dome mesh (true hemisphere, base flat at Z=0 in mesh space) -->
     <visual>
       <origin xyz="0 0 ${dome_z}" rpy="0 0 0"/>
-      <geometry><sphere radius="${dome_r}"/></geometry>
+      <geometry>
+        <mesh filename="package://spider_description/meshes/dome.obj"/>
+      </geometry>
       <material name="chassis_orange"><color rgba="0.85 0.35 0.05 1.0"/></material>
     </visual>
 
@@ -286,39 +288,40 @@
       <geometry><cylinder radius="${base_r}" length="${base_h}"/></geometry>
     </collision>
 
-    <!-- Collision 2: dome -->
+    <!-- Collision 2: dome approximated as cylinder (r=dome_r, h=dome_r) -->
+    <!-- Cylinder center at z = dome_z + dome_r/2 to cover the dome volume -->
     <collision>
-      <origin xyz="0 0 ${dome_z}" rpy="0 0 0"/>
-      <geometry><sphere radius="${dome_r}"/></geometry>
+      <origin xyz="0 0 ${dome_z + dome_r/2.0}" rpy="0 0 0"/>
+      <geometry><cylinder radius="${dome_r}" length="${dome_r}"/></geometry>
     </collision>
   </link>
 
   <!-- ============================================================
        LEG INSTANTIATION
-       hip_r = 0.10 m  (radial distance of coxa joint from centre)
-       hip_z = base_h/2 = +0.0125 m  (top surface of base disc)
+       hip_r = base_r - 0.015  (radial distance of coxa joint from centre)
+       hip_z = base_h/2        (top surface of base disc)
 
        Hip positions (on top face of disc):
-         front_right  ( 45°): x= hip_r·cos45° = 0.07071, y= 0.07071
-         front_left   (135°): x=-0.07071,               y= 0.07071
-         back_left   (-135°): x=-0.07071,               y=-0.07071
-         back_right   (-45°): x= 0.07071,               y=-0.07071
+         front_right  ( 45°): x= hip_r·cos45°, y= hip_r·sin45°
+         front_left   (135°): x=-hip_r·cos45°, y= hip_r·sin45°
+         back_left   (-135°): x=-hip_r·cos45°, y=-hip_r·sin45°
+         back_right   (-45°): x= hip_r·cos45°, y=-hip_r·sin45°
   ============================================================ -->
 
   <xacro:leg leg_name="front_right"
-             hip_x="0.07071"  hip_y="0.07071"
+             hip_x="${hip_r * 0.70711}"  hip_y="${hip_r * 0.70711}"
              hip_yaw="${pi/4}"/>
 
   <xacro:leg leg_name="front_left"
-             hip_x="-0.07071" hip_y="0.07071"
+             hip_x="${-hip_r * 0.70711}" hip_y="${hip_r * 0.70711}"
              hip_yaw="${3*pi/4}"/>
 
   <xacro:leg leg_name="back_left"
-             hip_x="-0.07071" hip_y="-0.07071"
+             hip_x="${-hip_r * 0.70711}" hip_y="${-hip_r * 0.70711}"
              hip_yaw="${-3*pi/4}"/>
 
   <xacro:leg leg_name="back_right"
-             hip_x="0.07071"  hip_y="-0.07071"
+             hip_x="${hip_r * 0.70711}"  hip_y="${-hip_r * 0.70711}"
              hip_yaw="${-pi/4}"/>
 
   <!-- ============================================================

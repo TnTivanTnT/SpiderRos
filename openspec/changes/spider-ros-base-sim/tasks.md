@@ -66,3 +66,14 @@
 - [x] 7.1 Crear `spider_description/README.md` con instrucciones para compilar y ejecutar el launch file
 - [x] 7.2 Documentar los argumentos del launch file y valores por defecto
 - [x] 7.3 Documentar la estructura geométrica del robot (caderas a 45°, 135°, -135°, -45°)
+
+## 8. Cúpula como malla 3D (rev.3)
+
+- [x] 8.1 Crear directorio `spider_description/meshes/`
+- [x] 8.2 Escribir script `meshes/gen_dome.py` que genere `dome.obj` (semiesfera r=0.08 m, base plana en Z=0, 16 stacks × 32 slices + tapa inferior)
+- [x] 8.3 Ejecutar `gen_dome.py` y verificar que genera `dome.obj` con 578 vértices y 1024 caras
+- [x] 8.4 Actualizar CONSTANTS en URDF: `base_r=0.12`, `dome_r=0.08`, `dome_z=${base_h/2.0}`, `hip_r=${base_r - 0.015}`
+- [x] 8.5 Reemplazar visual de la cúpula: `<mesh filename="package://spider_description/meshes/dome.obj"/>` en `xyz="0 0 ${dome_z}"`
+- [x] 8.6 Reemplazar colisión de la cúpula: cilindro aproximado `r=dome_r, h=dome_r` centrado en `z=${dome_z + dome_r/2.0}`
+- [x] 8.7 Actualizar `CMakeLists.txt` para instalar directorio `meshes/`
+- [x] 8.8 Ejecutar `colcon build` y `check_urdf` y verificar que todo pasa

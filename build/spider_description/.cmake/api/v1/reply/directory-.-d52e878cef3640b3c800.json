@@ -232,7 +232,8 @@
 				"urdf",
 				"launch",
 				"config",
-				"worlds"
+				"worlds",
+				"meshes"
 			],
 			"type" : "directory"
 		},

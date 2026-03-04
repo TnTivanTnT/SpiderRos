@@ -2,6 +2,8 @@
 /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/launch/spider_sim.launch.py
 /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/config/controllers.yaml
 /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/worlds/empty.sdf
+/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/meshes/gen_dome.py
+/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/meshes/dome.obj
 /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/ament_index/resource_index/package_run_dependencies/spider_description
 /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/ament_index/resource_index/parent_prefix_path/spider_description
 /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/environment/ament_prefix_path.sh

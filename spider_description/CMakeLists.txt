@@ -4,7 +4,7 @@ project(spider_description)
 find_package(ament_cmake REQUIRED)
 
 install(
-  DIRECTORY urdf launch config worlds
+  DIRECTORY urdf launch config worlds meshes
   DESTINATION share/${PROJECT_NAME}
 )
 

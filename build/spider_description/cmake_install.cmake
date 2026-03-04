@@ -48,6 +48,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/maki/Desktop/GitHub/SpiderRos/spider_description/launch"
     "/home/maki/Desktop/GitHub/SpiderRos/spider_description/config"
     "/home/maki/Desktop/GitHub/SpiderRos/spider_description/worlds"
+    "/home/maki/Desktop/GitHub/SpiderRos/spider_description/meshes"
     )
 endif()
 
