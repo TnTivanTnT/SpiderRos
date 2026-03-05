@@ -171,7 +171,7 @@ class SpiderTeleopKey(Node):
         """Publish current joint positions to all leg controllers."""
         for leg_name, positions in self.leg_positions.items():
             msg = Float64MultiArray()
-            msg.data = positions
+            msg.data = [float(x) for x in positions]
             self.leg_publishers[leg_name].publish(msg)
     
     def run(self):
