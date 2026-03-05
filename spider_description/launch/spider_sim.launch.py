@@ -1,18 +1,24 @@
 """
 spider_sim.launch.py
 --------------------
-Launch file for Spider Quadruped Robot - Hito 1 (Structural)
+Launch file for Spider Quadruped Robot - Hito 3 (IK & Gait)
 
 Starts:
   1. Ignition Gazebo 6 with empty world (running, no pause)
   2. robot_state_publisher with URDF from xacro
   3. Spawn robot via ros_gz_sim (TimerAction +3s)
-  4. Activate joint_state_broadcaster (TimerAction +5s)
+  4. Activate joint_state_broadcaster (TimerAction +5.5s)
+  5. Activate 4 leg position controllers (TimerAction +6.5-7.1s)
+  6. [Optional] spider_ik_node (TimerAction +8.5s, if enable_ik_node:=true)
 
 Arguments:
-  use_sim_time  (bool, default: true)  - Use simulation clock
-  gz_headless   (bool, default: false) - Launch Gazebo without GUI
-  spawn_z       (float, default: 0.25) - Spawn height above ground
+  use_sim_time       (bool,  default: true)   - Use simulation clock
+  gz_headless        (bool,  default: false)  - Launch Gazebo without GUI
+  spawn_z            (float, default: 0.18)   - Spawn height above ground
+  enable_ik_node     (bool,  default: true)   - Launch spider_ik_node (IK/gait)
+  step_height        (float, default: 0.05)   - Swing step height (m)
+  gait_cycle_time    (float, default: 2.0)    - Full gait cycle duration (s)
+  swing_duty_cycle   (float, default: 0.3)    - Fraction of cycle in swing
 """
 
 import os
@@ -58,13 +64,37 @@ def generate_launch_description():
     )
     spawn_z_arg = DeclareLaunchArgument(
         'spawn_z',
-        default_value='0.25',
+        default_value='0.18',
         description='Z position for robot spawn (meters above ground)'
     )
+    enable_ik_node_arg = DeclareLaunchArgument(
+        'enable_ik_node',
+        default_value='true',
+        description='Launch spider_ik_node (IK/gait locomotion). Set false for manual teleop.'
+    )
+    step_height_arg = DeclareLaunchArgument(
+        'step_height',
+        default_value='0.05',
+        description='Swing step height in metres'
+    )
+    gait_cycle_time_arg = DeclareLaunchArgument(
+        'gait_cycle_time',
+        default_value='2.0',
+        description='Full gait cycle duration in seconds'
+    )
+    swing_duty_cycle_arg = DeclareLaunchArgument(
+        'swing_duty_cycle',
+        default_value='0.3',
+        description='Fraction of gait cycle that each leg spends in swing'
+    )
 
-    use_sim_time = LaunchConfiguration('use_sim_time')
-    gz_headless   = LaunchConfiguration('gz_headless')
-    spawn_z       = LaunchConfiguration('spawn_z')
+    use_sim_time    = LaunchConfiguration('use_sim_time')
+    gz_headless     = LaunchConfiguration('gz_headless')
+    spawn_z         = LaunchConfiguration('spawn_z')
+    enable_ik_node  = LaunchConfiguration('enable_ik_node')
+    step_height     = LaunchConfiguration('step_height')
+    gait_cycle_time = LaunchConfiguration('gait_cycle_time')
+    swing_duty_cycle = LaunchConfiguration('swing_duty_cycle')
 
     # ---------------------------------------------------------------
     # Make the ign_ros2_control .so visible to Ignition Gazebo.
@@ -199,6 +229,29 @@ def generate_launch_description():
         )
 
     # ---------------------------------------------------------------
+    # 5. spider_ik_node — delayed 8.5 s (after all controllers active)
+    #    Only started when enable_ik_node:=true (default)
+    # ---------------------------------------------------------------
+    spider_ik_node = TimerAction(
+        period=8.5,
+        actions=[
+            Node(
+                package='spider_description',
+                executable='spider_ik_node.py',
+                name='spider_ik_node',
+                output='screen',
+                parameters=[{
+                    'use_sim_time':      use_sim_time,
+                    'step_height':       step_height,
+                    'gait_cycle_time':   gait_cycle_time,
+                    'swing_duty_cycle':  swing_duty_cycle,
+                }],
+                condition=IfCondition(enable_ik_node),
+            )
+        ]
+    )
+
+    # ---------------------------------------------------------------
     # ROS <-> Ignition bridge for /clock (sim time)
     # ---------------------------------------------------------------
     gz_ros_bridge = Node(
@@ -215,6 +268,10 @@ def generate_launch_description():
         use_sim_time_arg,
         gz_headless_arg,
         spawn_z_arg,
+        enable_ik_node_arg,
+        step_height_arg,
+        gait_cycle_time_arg,
+        swing_duty_cycle_arg,
         ign_plugin_path,
         gazebo_gui,
         gazebo_headless,
@@ -222,4 +279,4 @@ def generate_launch_description():
         gz_ros_bridge,
         spawn_robot,
         activate_jsb,
-    ] + activate_leg_controller_actions)
+    ] + activate_leg_controller_actions + [spider_ik_node])

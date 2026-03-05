@@ -14,7 +14,7 @@
   <!-- Body geometry -->
   <xacro:property name="base_r"        value="0.12"/>   <!-- base disc radius (wider than dome) -->
   <xacro:property name="base_h"        value="0.01"/>   <!-- base disc height -->
-  <xacro:property name="dome_r"        value="0.08"/>   <!-- dome mesh radius (hemisphere) -->
+  <xacro:property name="dome_r"        value="0.1"/>   <!-- dome mesh radius (hemisphere) -->
   <!-- dome mesh base sits exactly on top face of disc (z = +base_h/2) -->
   <xacro:property name="dome_z"        value="${base_h / 2.0}"/>
 
@@ -193,6 +193,16 @@
           </friction>
         </surface>
       </collision>
+      <!-- Foot-tip sphere: point contact at the end of the tibia for better ground grip -->
+      <collision>
+        <origin xyz="${tibia_l} 0 0" rpy="0 0 0"/>
+        <geometry><sphere radius="${tibia_r}"/></geometry>
+        <surface>
+          <friction>
+            <ode><mu>1.0</mu><mu2>1.0</mu2></ode>
+          </friction>
+        </surface>
+      </collision>
     </link>
 
     <!-- Tibia joint: at end of femur, rotates around Y -->
@@ -336,18 +346,27 @@
     <joint name="front_right_coxa_joint">
       <command_interface name="position">
         <param name="min">${-pi/2}</param><param name="max">${pi/2}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="front_right_femur_joint">
       <command_interface name="position">
         <param name="min">${-pi/3}</param><param name="max">${pi/3}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="front_right_tibia_joint">
       <command_interface name="position">
         <param name="min">${-2*pi/3}</param><param name="max">${pi/6}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
@@ -356,18 +375,27 @@
     <joint name="front_left_coxa_joint">
       <command_interface name="position">
         <param name="min">${-pi/2}</param><param name="max">${pi/2}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="front_left_femur_joint">
       <command_interface name="position">
         <param name="min">${-pi/3}</param><param name="max">${pi/3}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="front_left_tibia_joint">
       <command_interface name="position">
         <param name="min">${-2*pi/3}</param><param name="max">${pi/6}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
@@ -376,18 +404,27 @@
     <joint name="back_left_coxa_joint">
       <command_interface name="position">
         <param name="min">${-pi/2}</param><param name="max">${pi/2}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="back_left_femur_joint">
       <command_interface name="position">
         <param name="min">${-pi/3}</param><param name="max">${pi/3}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="back_left_tibia_joint">
       <command_interface name="position">
         <param name="min">${-2*pi/3}</param><param name="max">${pi/6}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
@@ -396,18 +433,27 @@
     <joint name="back_right_coxa_joint">
       <command_interface name="position">
         <param name="min">${-pi/2}</param><param name="max">${pi/2}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="back_right_femur_joint">
       <command_interface name="position">
         <param name="min">${-pi/3}</param><param name="max">${pi/3}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>
     <joint name="back_right_tibia_joint">
       <command_interface name="position">
         <param name="min">${-2*pi/3}</param><param name="max">${pi/6}</param>
+        <param name="p">100.0</param>
+        <param name="i">0.1</param>
+        <param name="d">1.0</param>
       </command_interface>
       <state_interface name="position"/><state_interface name="velocity"/>
     </joint>

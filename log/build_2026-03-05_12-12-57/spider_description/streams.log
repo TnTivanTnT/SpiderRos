@@ -1,0 +1,31 @@
+[0.007s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+[0.048s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+[0.059s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/maki/Desktop/GitHub/SpiderRos/build/spider_description
+[0.064s] -- Install configuration: ""
+[0.064s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/urdf
+[0.064s] -- Installing: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/urdf/spider.urdf.xacro
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/launch
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/launch/spider_sim.launch.py
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/config
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/config/controllers.yaml
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/worlds
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/worlds/empty.sdf
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/meshes
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/meshes/gen_dome.py
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/meshes/dome.obj
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/ament_index/resource_index/package_run_dependencies/spider_description
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/ament_index/resource_index/parent_prefix_path/spider_description
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/environment/ament_prefix_path.sh
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/environment/ament_prefix_path.dsv
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/environment/path.sh
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/environment/path.dsv
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/local_setup.bash
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/local_setup.sh
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/local_setup.zsh
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/local_setup.dsv
+[0.065s] -- Installing: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/package.dsv
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/ament_index/resource_index/packages/spider_description
+[0.065s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/cmake/spider_descriptionConfig.cmake
+[0.066s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/cmake/spider_descriptionConfig-version.cmake
+[0.066s] -- Up-to-date: /home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/package.xml
+[0.066s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/maki/Desktop/GitHub/SpiderRos/build/spider_description

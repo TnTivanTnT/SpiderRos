@@ -1,0 +1,15 @@
+[0.017s] Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+[0.062s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.774s] CMake Error at /opt/ros/humble/share/ament_cmake_python/cmake/ament_python_install_package.cmake:66 (message):
+[0.774s]   ament_python_install_package() the Python package folder
+[0.775s]   '/home/maki/Desktop/GitHub/SpiderRos/spider_description/spider_description'
+[0.775s]   doesn't contain an '__init__.py' file
+[0.775s] Call Stack (most recent call first):
+[0.775s]   /opt/ros/humble/share/ament_cmake_python/cmake/ament_python_install_package.cmake:39 (_ament_cmake_python_install_package)
+[0.775s]   CMakeLists.txt:14 (ament_python_install_package)
+[0.775s] 
+[0.775s] 
+[0.775s] -- Configuring incomplete, errors occurred!
+[0.776s] See also "/home/maki/Desktop/GitHub/SpiderRos/build/spider_description/CMakeFiles/CMakeOutput.log".
+[0.778s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.782s] Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16

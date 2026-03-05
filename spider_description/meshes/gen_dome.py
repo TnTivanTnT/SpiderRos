@@ -10,7 +10,7 @@ Generate a hemisphere (dome) OBJ mesh.
 import math
 import os
 
-RADIUS = 0.08
+RADIUS = 0.1
 STACKS = 16   # latitude divisions (0 = equator, STACKS = apex)
 SLICES = 32   # longitude divisions
 

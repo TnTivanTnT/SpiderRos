@@ -1,0 +1,345 @@
+[0.180s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'spider_description']
+[0.180s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['spider_description'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7732e8848670>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7732e88480d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7732e88480d0>>)
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.482s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/maki/Desktop/GitHub/SpiderRos'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extensions ['ignore', 'ignore_ament_install']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'ignore'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'ignore_ament_install'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extensions ['colcon_pkg']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'colcon_pkg'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extensions ['colcon_meta']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'colcon_meta'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extensions ['ros']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'ros'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extensions ['cmake', 'python']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'cmake'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'python'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extensions ['python_setup_py']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(openspec) by extension 'python_setup_py'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extensions ['ignore', 'ignore_ament_install']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'ignore'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'ignore_ament_install'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extensions ['colcon_pkg']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'colcon_pkg'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extensions ['colcon_meta']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'colcon_meta'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extensions ['ros']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'ros'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extensions ['cmake', 'python']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'cmake'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'python'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extensions ['python_setup_py']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes) by extension 'python_setup_py'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extensions ['ignore', 'ignore_ament_install']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'ignore'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'ignore_ament_install'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extensions ['colcon_pkg']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'colcon_pkg'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extensions ['colcon_meta']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'colcon_meta'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extensions ['ros']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'ros'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extensions ['cmake', 'python']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'cmake'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'python'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extensions ['python_setup_py']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive) by extension 'python_setup_py'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extensions ['ignore', 'ignore_ament_install']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'ignore'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'ignore_ament_install'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extensions ['colcon_pkg']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'colcon_pkg'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extensions ['colcon_meta']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'colcon_meta'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extensions ['ros']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'ros'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extensions ['cmake', 'python']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'cmake'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'python'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extensions ['python_setup_py']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim) by extension 'python_setup_py'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extensions ['ignore', 'ignore_ament_install']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'ignore'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'ignore_ament_install'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extensions ['colcon_pkg']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'colcon_pkg'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extensions ['colcon_meta']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'colcon_meta'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extensions ['ros']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'ros'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extensions ['cmake', 'python']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'cmake'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'python'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extensions ['python_setup_py']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs) by extension 'python_setup_py'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extensions ['ignore', 'ignore_ament_install']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'ignore'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'ignore_ament_install'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extensions ['colcon_pkg']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'colcon_pkg'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extensions ['colcon_meta']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'colcon_meta'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extensions ['ros']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'ros'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extensions ['cmake', 'python']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'cmake'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'python'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extensions ['python_setup_py']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/robot-description) by extension 'python_setup_py'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extensions ['ignore', 'ignore_ament_install']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'ignore'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'ignore_ament_install'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extensions ['colcon_pkg']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'colcon_pkg'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extensions ['colcon_meta']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'colcon_meta'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extensions ['ros']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'ros'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extensions ['cmake', 'python']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'cmake'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'python'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extensions ['python_setup_py']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/ros2-control-config) by extension 'python_setup_py'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extensions ['ignore', 'ignore_ament_install']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'ignore'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'ignore_ament_install'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extensions ['colcon_pkg']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'colcon_pkg'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extensions ['colcon_meta']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'colcon_meta'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extensions ['ros']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'ros'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extensions ['cmake', 'python']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'cmake'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'python'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extensions ['python_setup_py']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/archive/2026-03-05-spider-ros-base-sim/specs/simulation-launch) by extension 'python_setup_py'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extensions ['ignore', 'ignore_ament_install']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'ignore'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'ignore_ament_install'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extensions ['colcon_pkg']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'colcon_pkg'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extensions ['colcon_meta']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'colcon_meta'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extensions ['ros']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'ros'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extensions ['cmake', 'python']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'cmake'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'python'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extensions ['python_setup_py']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key) by extension 'python_setup_py'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extensions ['ignore', 'ignore_ament_install']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'ignore'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'ignore_ament_install'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extensions ['colcon_pkg']
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'colcon_pkg'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extensions ['colcon_meta']
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'colcon_meta'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extensions ['ros']
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'ros'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extensions ['cmake', 'python']
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'cmake'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'python'
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extensions ['python_setup_py']
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs) by extension 'python_setup_py'
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extensions ['ignore', 'ignore_ament_install']
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'ignore'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'ignore_ament_install'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extensions ['colcon_pkg']
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'colcon_pkg'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extensions ['colcon_meta']
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'colcon_meta'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extensions ['ros']
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'ros'
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extensions ['cmake', 'python']
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'cmake'
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'python'
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extensions ['python_setup_py']
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/joint-position-control) by extension 'python_setup_py'
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extensions ['ignore', 'ignore_ament_install']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'ignore'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'ignore_ament_install'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extensions ['colcon_pkg']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'colcon_pkg'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extensions ['colcon_meta']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'colcon_meta'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extensions ['ros']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'ros'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extensions ['cmake', 'python']
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'cmake'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'python'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extensions ['python_setup_py']
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/keyboard-teleop) by extension 'python_setup_py'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extensions ['ignore', 'ignore_ament_install']
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'ignore'
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'ignore_ament_install'
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extensions ['colcon_pkg']
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'colcon_pkg'
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extensions ['colcon_meta']
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'colcon_meta'
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extensions ['ros']
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'ros'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extensions ['cmake', 'python']
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'cmake'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'python'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extensions ['python_setup_py']
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/changes/hito-2-teleop-key/specs/simulation-launch) by extension 'python_setup_py'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extensions ['ignore', 'ignore_ament_install']
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'ignore'
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'ignore_ament_install'
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extensions ['colcon_pkg']
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'colcon_pkg'
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extensions ['colcon_meta']
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'colcon_meta'
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extensions ['ros']
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'ros'
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extensions ['cmake', 'python']
+[0.528s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'cmake'
+[0.528s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'python'
+[0.528s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extensions ['python_setup_py']
+[0.528s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs) by extension 'python_setup_py'
+[0.528s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extensions ['ignore', 'ignore_ament_install']
+[0.528s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'ignore'
+[0.528s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'ignore_ament_install'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extensions ['colcon_pkg']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'colcon_pkg'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extensions ['colcon_meta']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'colcon_meta'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extensions ['ros']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'ros'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extensions ['cmake', 'python']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'cmake'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'python'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extensions ['python_setup_py']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/robot-description) by extension 'python_setup_py'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extensions ['ignore', 'ignore_ament_install']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'ignore'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'ignore_ament_install'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extensions ['colcon_pkg']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'colcon_pkg'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extensions ['colcon_meta']
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'colcon_meta'
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extensions ['ros']
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'ros'
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extensions ['cmake', 'python']
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'cmake'
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'python'
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extensions ['python_setup_py']
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/ros2-control-config) by extension 'python_setup_py'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extensions ['ignore', 'ignore_ament_install']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'ignore'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'ignore_ament_install'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extensions ['colcon_pkg']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'colcon_pkg'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extensions ['colcon_meta']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'colcon_meta'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extensions ['ros']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'ros'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extensions ['cmake', 'python']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'cmake'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'python'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extensions ['python_setup_py']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(openspec/specs/simulation-launch) by extension 'python_setup_py'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extensions ['ignore', 'ignore_ament_install']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extension 'ignore'
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extension 'ignore_ament_install'
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extensions ['colcon_pkg']
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extension 'colcon_pkg'
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extensions ['colcon_meta']
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extension 'colcon_meta'
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extensions ['ros']
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(spider_description) by extension 'ros'
+[0.541s] DEBUG:colcon.colcon_core.package_identification:Package 'spider_description' with type 'ros.ament_cmake' and name 'spider_description'
+[0.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.541s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.542s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.582s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.582s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.587s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/maki/Desktop/GitHub/SpiderRos/install
+[0.590s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 356 installed packages in /opt/ros/humble
+[0.606s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'cmake_args' from command line to 'None'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'cmake_target' from command line to 'None'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.678s] Level 5:colcon.colcon_core.verb:set package 'spider_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.678s] DEBUG:colcon.colcon_core.verb:Building package 'spider_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description', 'merge_install': False, 'path': '/home/maki/Desktop/GitHub/SpiderRos/spider_description', 'symlink_install': False, 'test_result_base': None}
+[0.679s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.681s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.681s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maki/Desktop/GitHub/SpiderRos/spider_description' with build type 'ament_cmake'
+[0.682s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maki/Desktop/GitHub/SpiderRos/spider_description'
+[0.685s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.685s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.685s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.708s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+[2.081s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(spider_description)
+[2.085s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maki/Desktop/GitHub/SpiderRos/build/spider_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/maki/Desktop/GitHub/SpiderRos/build/spider_description -- -j16 -l16
+[2.093s] Level 1:colcon.colcon_core.environment:checking '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description' for CMake module files
+[2.095s] Level 1:colcon.colcon_core.environment:checking '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description' for CMake config files
+[2.097s] Level 1:colcon.colcon_core.shell:create_environment_hook('spider_description', 'cmake_prefix_path')
+[2.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/hook/cmake_prefix_path.ps1'
+[2.100s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/hook/cmake_prefix_path.dsv'
+[2.101s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/hook/cmake_prefix_path.sh'
+[2.105s] Level 1:colcon.colcon_core.environment:checking '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/lib'
+[2.105s] Level 1:colcon.colcon_core.environment:checking '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/bin'
+[2.106s] Level 1:colcon.colcon_core.environment:checking '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/lib/pkgconfig/spider_description.pc'
+[2.106s] Level 1:colcon.colcon_core.environment:checking '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/lib/python3.10/site-packages'
+[2.108s] Level 1:colcon.colcon_core.environment:checking '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/bin'
+[2.109s] INFO:colcon.colcon_core.shell:Creating package script '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/package.ps1'
+[2.112s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/package.dsv'
+[2.116s] INFO:colcon.colcon_core.shell:Creating package script '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/package.sh'
+[2.119s] INFO:colcon.colcon_core.shell:Creating package script '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/package.bash'
+[2.122s] INFO:colcon.colcon_core.shell:Creating package script '/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/spider_description/package.zsh'
+[2.124s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maki/Desktop/GitHub/SpiderRos/install/spider_description/share/colcon-core/packages/spider_description)
+[2.136s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.136s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.136s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[2.136s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.150s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.151s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.151s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.186s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.188s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maki/Desktop/GitHub/SpiderRos/install/local_setup.ps1'
+[2.192s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/maki/Desktop/GitHub/SpiderRos/install/_local_setup_util_ps1.py'
+[2.198s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maki/Desktop/GitHub/SpiderRos/install/setup.ps1'
+[2.202s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maki/Desktop/GitHub/SpiderRos/install/local_setup.sh'
+[2.204s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/maki/Desktop/GitHub/SpiderRos/install/_local_setup_util_sh.py'
+[2.206s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maki/Desktop/GitHub/SpiderRos/install/setup.sh'
+[2.211s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maki/Desktop/GitHub/SpiderRos/install/local_setup.bash'
+[2.213s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maki/Desktop/GitHub/SpiderRos/install/setup.bash'
+[2.217s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maki/Desktop/GitHub/SpiderRos/install/local_setup.zsh'
+[2.219s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maki/Desktop/GitHub/SpiderRos/install/setup.zsh'
