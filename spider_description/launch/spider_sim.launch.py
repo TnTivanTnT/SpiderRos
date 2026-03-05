@@ -143,22 +143,60 @@ def generate_launch_description():
     )
 
     # ---------------------------------------------------------------
-    # 4. Activate joint_state_broadcaster — delayed 5 s after launch
-    #    (after spawn + controller_manager is up)
+    # 4. Activate joint_state_broadcaster — delayed 5.5 s after launch
+    #    (after spawn + controller_manager is fully ready)
     # ---------------------------------------------------------------
     activate_jsb = TimerAction(
-        period=5.0,
+        period=5.5,
         actions=[
             ExecuteProcess(
                 cmd=[
-                    'ros2', 'control', 'load_controller',
-                    '--set-state', 'active',
+                    FindExecutable(name='ros2'),
+                    'control',
+                    'load_controller',
+                    '--set-state',
+                    'active',
                     'joint_state_broadcaster',
                 ],
                 output='screen',
             )
         ]
     )
+
+    # ---------------------------------------------------------------
+    # 4b. Activate leg position controllers — delayed 6.5 s + increments
+    #     (after joint_state_broadcaster is fully up)
+    #     Each controller gets a separate load_controller call
+    # ---------------------------------------------------------------
+    leg_controllers = [
+        'front_right_leg_controller',
+        'front_left_leg_controller',
+        'back_left_leg_controller',
+        'back_right_leg_controller',
+    ]
+    
+    # Create TimerActions for each leg controller (6.5s, 6.7s, 6.9s, 7.1s)
+    activate_leg_controller_actions = []
+    for idx, controller_name in enumerate(leg_controllers):
+        delay = 6.5 + (idx * 0.2)  # 6.5, 6.7, 6.9, 7.1 seconds
+        activate_leg_controller_actions.append(
+            TimerAction(
+                period=delay,
+                actions=[
+                    ExecuteProcess(
+                        cmd=[
+                            FindExecutable(name='ros2'),
+                            'control',
+                            'load_controller',
+                            '--set-state',
+                            'active',
+                            controller_name,
+                        ],
+                        output='screen',
+                    )
+                ]
+            )
+        )
 
     # ---------------------------------------------------------------
     # ROS <-> Ignition bridge for /clock (sim time)
@@ -184,4 +222,4 @@ def generate_launch_description():
         gz_ros_bridge,
         spawn_robot,
         activate_jsb,
-    ])
+    ] + activate_leg_controller_actions)
