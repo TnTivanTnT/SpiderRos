@@ -59,7 +59,7 @@ _FALLBACK_HIP_POSITIONS = {
 # With corrected URDF-aware IK (z = -(femur*sin(alpha)+tibia*sin(beta))):
 #   x=0.16, z=-0.15 → t2≈42°, t3≈25° (within joint limits [-60°,+60°] and [-120°,+30°])
 # At spawn_z=0.18, hip is at z_world≈0.185 m, foot at z_world≈0.035 m (near ground ✓)
-_NEUTRAL_REACH = 0.16    # meters forward from hip centre (in leg-local X)
+_NEUTRAL_REACH = 0.13    # meters forward from hip centre (in leg-local X)
 _NEUTRAL_HEIGHT = -0.15  # meters below hip joint (strictly negative → foot toward ground)
 
 # Joint limits (radians)
@@ -394,34 +394,23 @@ class InverseKinematics:
 class GaitController:
     """
     Creep gait controller for a quadruped robot.
-
-    Each leg is assigned a phase offset so that only one leg is in swing at a
-    time and the remaining three form a stable support triangle.
-
-    Phase offsets (fraction of full cycle):
-      front_right: 0.00
-      front_left:  0.25
-      back_left:   0.50
-      back_right:  0.75
-
-    Parameters
-    ----------
-    step_height      : float  Max height of the parabolic swing trajectory (m)
-    gait_cycle_time  : float  Duration of one full gait cycle (s)
-    swing_duty_cycle : float  Fraction of cycle during which a leg is in swing
-    neutral_reach    : float  Neutral foot-tip X distance from hip in leg frame
-    neutral_height   : float  Neutral foot-tip Z distance from hip (negative = below)
     """
-
-    # Leg names (order matters for phase assignment)
     LEG_NAMES = ['front_right', 'front_left', 'back_left', 'back_right']
 
-    # Phase offsets: one leg swings per quarter cycle
+    # Secuencia en diagonal para mantener el centro de masas dentro del triángulo
     PHASE_OFFSETS = {
         'front_right': 0.00,
-        'front_left':  0.25,
-        'back_left':   0.50,
+        'back_left':   0.25,
+        'front_left':  0.50,
         'back_right':  0.75,
+    }
+    
+    # Orientación real de los motores en ROS (X positivo = frente, Y positivo = izquierda)
+    YAW_OFFSETS = {
+        'front_right': -math.pi / 4,
+        'front_left':   math.pi / 4,
+        'back_left':    3 * math.pi / 4,
+        'back_right':  -3 * math.pi / 4,
     }
 
     def __init__(
@@ -438,142 +427,98 @@ class GaitController:
         self.neutral_reach    = neutral_reach
         self.neutral_height   = neutral_height
 
-        # Current global gait phase [0, 1)
         self._phase = 0.0
-
-        # Per-leg current foot positions in leg-local frame (x, y, z)
-        self._foot_pos = {
-            leg: (neutral_reach, 0.0, neutral_height)
-            for leg in self.LEG_NAMES
-        }
-
-        # Desired foot target (updated in stance to push the body forward)
-        self._foot_target = {
-            leg: (neutral_reach, 0.0, neutral_height)
-            for leg in self.LEG_NAMES
-        }
-
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
+        self._foot_pos = {leg: (neutral_reach, 0.0, neutral_height) for leg in self.LEG_NAMES}
+        self._swing_start = {leg: (neutral_reach, 0.0, neutral_height) for leg in self.LEG_NAMES}
+        self._is_swinging = {leg: False for leg in self.LEG_NAMES}
 
     def update_gait(self, dt: float, vx: float, vy: float, wz: float):
-        """
-        Advance the gait by dt seconds and return foot-tip positions.
+        is_moving = abs(vx) > 0.001 or abs(vy) > 0.001 or abs(wz) > 0.001
 
-        Parameters
-        ----------
-        dt         : float  Time step (s)
-        vx, vy, wz : float  Body velocity commands (m/s, m/s, rad/s)
+        # Si el robot está parado (tecla K), volvemos suavemente a la posición de descanso
+        if not is_moving:
+            for leg in self.LEG_NAMES:
+                cx, cy, cz = self._foot_pos[leg]
+                nx, ny, nz = self.neutral_reach, 0.0, self.neutral_height
+                dx, dy, dz = nx - cx, ny - cy, nz - cz
+                dist = math.sqrt(dx**2 + dy**2 + dz**2)
+                speed = 0.2 * dt  # Velocidad suave de retorno
+                if dist > speed:
+                    self._foot_pos[leg] = (cx + dx/dist*speed, cy + dy/dist*speed, cz + dz/dist*speed)
+                else:
+                    self._foot_pos[leg] = (nx, ny, nz)
+            return self._foot_pos
 
-        Returns
-        -------
-        dict  {leg_name: (x, y, z)} foot positions in leg-local frame
-        """
-        # Emergency stop — return neutral pose
-        if vx == 0.0 and vy == 0.0 and wz == 0.0:
-            return self._neutral_positions()
-
-        # Advance global phase
         self._phase = (self._phase + dt / self.gait_cycle_time) % 1.0
-
         positions = {}
+
         for leg in self.LEG_NAMES:
             local_phase = (self._phase + self.PHASE_OFFSETS[leg]) % 1.0
-            if local_phase < self.swing_duty_cycle:
-                # --- Swing phase ---
+            in_swing = local_phase < self.swing_duty_cycle
+
+            if in_swing and not self._is_swinging[leg]:
+                self._swing_start[leg] = self._foot_pos[leg]
+                self._is_swinging[leg] = True
+            elif not in_swing:
+                self._is_swinging[leg] = False
+
+            if in_swing:
                 positions[leg] = self._swing_position(leg, local_phase, vx, vy, wz)
             else:
-                # --- Stance phase ---
                 positions[leg] = self._stance_position(leg, dt, vx, vy, wz)
 
         return positions
 
-    # ------------------------------------------------------------------
-    # Internal helpers
-    # ------------------------------------------------------------------
+    def _swing_position(self, leg: str, local_phase: float, vx: float, vy: float, wz: float):
+        t = local_phase / self.swing_duty_cycle  
 
-    def _neutral_positions(self):
-        """Return neutral (home) foot positions for all legs."""
-        return {
-            leg: (self.neutral_reach, 0.0, self.neutral_height)
-            for leg in self.LEG_NAMES
-        }
-
-    def _swing_position(self, leg: str, local_phase: float,
-                        vx: float, vy: float, wz: float):
-        """
-        Parabolic swing trajectory.
-
-        Progress t ∈ [0, 1] within the swing phase.
-        Height follows a sine arch: z = neutral_height + step_height * sin(π·t)
-        Horizontal: interpolates from current foot position to the step target.
-        """
-        t = local_phase / self.swing_duty_cycle  # 0 → 1 within swing
-
-        # Step target in leg-local frame: place foot ahead of neutral by half
-        # a step length (body moves forward by step_length during stance)
         step_length_x, step_length_y = self._step_length(vx, vy, wz, leg)
         target_x = self.neutral_reach + step_length_x * 0.5
         target_y = step_length_y * 0.5
 
-        # Start from previous foot position (smooth departure)
-        start_x, start_y, _ = self._foot_pos[leg]
+        start_x, start_y, _ = self._swing_start[leg]
 
         x = start_x + (target_x - start_x) * t
         y = start_y + (target_y - start_y) * t
-        z = self.neutral_height + self.step_height * math.sin(PI * t)
+        z = self.neutral_height + self.step_height * math.sin(math.pi * t)
 
         self._foot_pos[leg] = (x, y, z)
         return (x, y, z)
 
-    def _stance_position(self, leg: str, dt: float,
-                         vx: float, vy: float, wz: float):
-        """
-        Stance: foot fixed on ground while body moves forward.
-
-        In the leg-local frame this means the foot appears to slide backward
-        at the same speed as the body moves forward.
-        """
+    def _stance_position(self, leg: str, dt: float, vx: float, vy: float, wz: float):
         step_length_x, step_length_y = self._step_length(vx, vy, wz, leg)
         stance_fraction = 1.0 - self.swing_duty_cycle
 
-        # Rate of pushback per second in leg-local frame
-        pushback_x = -step_length_x / (self.gait_cycle_time * stance_fraction)
-        pushback_y = -step_length_y / (self.gait_cycle_time * stance_fraction)
+        if stance_fraction > 0:
+            pushback_x = -step_length_x / (self.gait_cycle_time * stance_fraction)
+            pushback_y = -step_length_y / (self.gait_cycle_time * stance_fraction)
+        else:
+            pushback_x = pushback_y = 0.0
 
         px, py, pz = self._foot_pos[leg]
         px = px + pushback_x * dt
         py = py + pushback_y * dt
-        pz = self.neutral_height  # foot stays on ground
+        pz = self.neutral_height  
+
+        px = max(self.neutral_reach - 0.15, min(self.neutral_reach + 0.15, px))
+        py = max(-0.15, min(0.15, py))
 
         self._foot_pos[leg] = (px, py, pz)
         return (px, py, pz)
 
     def _step_length(self, vx: float, vy: float, wz: float, leg: str):
-        """
-        Compute how far the foot should step per gait cycle for the given leg.
+        yaw = self.YAW_OFFSETS[leg]
+        
+        # Matriz de rotación: Traduce la velocidad del chasis al ángulo de la pata
+        lx = vx * math.cos(yaw) + vy * math.sin(yaw)
+        ly = -vx * math.sin(yaw) + vy * math.cos(yaw)
 
-        For pure translational velocity:
-          step_length = v * gait_cycle_time
-        For rotation, each leg has a tangential velocity contribution based on
-        its distance from the body centre (approximated by neutral_reach).
-        """
-        r = self.neutral_reach  # approx radius of hip from body centre
-        # Tangential velocity contribution for this leg (sign from PHASE_OFFSETS)
-        sign_map = {
-            'front_right': +1,
-            'front_left':  +1,
-            'back_left':   -1,
-            'back_right':  -1,
-        }
-        tang = wz * r * sign_map[leg]  # lateral component from rotation
+        r = self.neutral_reach  
+        tang_y = wz * r 
 
-        sx = (vx + tang) * self.gait_cycle_time
-        sy = vy * self.gait_cycle_time
+        sx = lx * self.gait_cycle_time
+        sy = (ly + tang_y) * self.gait_cycle_time
         return (sx, sy)
-
-
 # ---------------------------------------------------------------------------
 # ROS2 Node
 # ---------------------------------------------------------------------------
@@ -598,9 +543,9 @@ class SpiderIKNode(Node):
         super().__init__('spider_ik_node')
 
         # --- Declare configurable parameters ---
-        self.declare_parameter('step_height',       0.05)
+        self.declare_parameter('step_height',       0.08)
         self.declare_parameter('gait_cycle_time',   2.0)
-        self.declare_parameter('swing_duty_cycle',  0.3)
+        self.declare_parameter('swing_duty_cycle',  0.22)
 
         step_height      = self.get_parameter('step_height').value
         gait_cycle_time  = self.get_parameter('gait_cycle_time').value
@@ -664,8 +609,8 @@ class SpiderIKNode(Node):
 
     def _cmd_vel_callback(self, msg: Twist):
         """Receive and clip cmd_vel."""
-        self._vx = max(-0.5, min(0.5, float(msg.linear.x)))
-        self._vy = max(-0.5, min(0.5, float(msg.linear.y)))
+        self._vx = max(-0.08, min(0.08, -float(msg.linear.x)))
+        self._vy = max(-0.08, min(0.08, float(msg.linear.y)))
         self._wz = max(-1.0, min(1.0, float(msg.angular.z)))
         self.get_logger().debug(
             f'cmd_vel recv: vx={self._vx:.3f} vy={self._vy:.3f} wz={self._wz:.3f}'

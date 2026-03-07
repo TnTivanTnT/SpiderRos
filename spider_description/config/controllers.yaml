@@ -26,6 +26,10 @@ front_right_leg_controller:
       - front_right_coxa_joint
       - front_right_femur_joint
       - front_right_tibia_joint
+    gains:
+      front_right_coxa_joint:  {p: 80.0, i: 0.0, d: 2.0}
+      front_right_femur_joint: {p: 300.0, i: 0.5, d: 10.0}
+      front_right_tibia_joint: {p: 200.0, i: 0.5, d: 8.0}
 
 front_left_leg_controller:
   ros__parameters:
@@ -33,6 +37,10 @@ front_left_leg_controller:
       - front_left_coxa_joint
       - front_left_femur_joint
       - front_left_tibia_joint
+    gains:
+      front_left_coxa_joint:  {p: 80.0, i: 0.0, d: 2.0}
+      front_left_femur_joint: {p: 300.0, i: 0.5, d: 10.0}
+      front_left_tibia_joint: {p: 200.0, i: 0.5, d: 8.0}
 
 back_left_leg_controller:
   ros__parameters:
@@ -40,6 +48,10 @@ back_left_leg_controller:
       - back_left_coxa_joint
       - back_left_femur_joint
       - back_left_tibia_joint
+    gains:
+      back_left_coxa_joint:  {p: 80.0, i: 0.0, d: 2.0}
+      back_left_femur_joint: {p: 300.0, i: 0.5, d: 10.0}
+      back_left_tibia_joint: {p: 200.0, i: 0.5, d: 8.0}
 
 back_right_leg_controller:
   ros__parameters:
@@ -47,3 +59,7 @@ back_right_leg_controller:
       - back_right_coxa_joint
       - back_right_femur_joint
       - back_right_tibia_joint
+    gains:
+      back_right_coxa_joint:  {p: 80.0, i: 0.0, d: 2.0}
+      back_right_femur_joint: {p: 300.0, i: 0.5, d: 10.0}
+      back_right_tibia_joint: {p: 200.0, i: 0.5, d: 8.0}
