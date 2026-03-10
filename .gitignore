@@ -1,0 +1,19 @@
+# Carpetas de compilación de ROS 2
+build/
+install/
+log/
+
+# Configuraciones locales y archivos autogenerados por el editor
+.opencode/
+openspec/
+HITO_*.md
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
