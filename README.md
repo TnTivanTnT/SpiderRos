@@ -5,10 +5,10 @@ A quadruped robot project focused on locomotion, inverse kinematics, and ROS 2 i
 ## 🚀 Quick Start
 To start working with ROS 2 Humble in your terminal:
 
-'''bash
+```bash
 source /opt/ros/humble/setup.bash
 source ~/{path_to_your_ws}/install/setup.bash
-''' 
+```
 
 ## 🛠 Project Specifications
 
