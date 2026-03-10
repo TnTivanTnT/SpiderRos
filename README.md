@@ -47,7 +47,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 **Controls:**
 * **I**: Forward
-* ** (comma)**: Backward
+* **, (comma)**: Backward
 * **J / L**: Turn Left / Right
 
 ---
