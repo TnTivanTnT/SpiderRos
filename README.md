@@ -45,10 +45,10 @@ ros2 launch spider_description spider_sim.launch.py
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
-
-    * **I**: Forward
-    * **, (comma)**: Backward
-    * **J/L**: Turn Left/Right
+**Controls:**
+* **I**: Forward
+* ** (comma)**: Backward
+* **J / L**: Turn Left / Right
 
 ---
 
